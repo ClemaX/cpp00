@@ -2,7 +2,7 @@
 //                                                                            //
 //                Account.class.cpp for GlobalBanksters United                //
 //                Created on  : Thu Nov 20 19:43:15 1989                      //
-//                Last update : Wed Jan 04 14:54:06 1992                      //
+//                Last update : Sat Apr 26 00:11:05 2020                      //
 //                Made by : Brad "Buddy" McLane <bm@gbu.com>                  //
 //                                                                            //
 // ************************************************************************** //
@@ -45,6 +45,7 @@ private:
 	int				_amount;
 	int				_nbDeposits;
 	int				_nbWithdrawals;
+	mutable int		_nbChecks;
 
 	Account( void );
 

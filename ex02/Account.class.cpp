@@ -2,7 +2,7 @@
 //                                                                            //
 //                Account.class.cpp for GlobalBanksters United                //
 //                Created on  : Sat Apr 25 22:31:45 2020                      //
-//                Last update : Sat Apr 25 22:32:13 2020                      //
+//                Last update : Sat Apr 26 00:16:25 2020                      //
 //                Made by : Clement Hamada <chamada@student.42lyon.fr>        //
 //                                                                            //
 // ************************************************************************** //
@@ -56,6 +56,7 @@ Account::Account(int initial_deposit)
 	_totalAmount += _amount = initial_deposit;
 	_nbDeposits = 0;
 	_nbWithdrawals = 0;
+	_nbChecks = 0;
 
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ';';
@@ -115,6 +116,7 @@ bool Account::makeWithdrawal(int withdrawal)
 
 int Account::checkAmount(void) const
 {
+	_nbChecks++;
 	return _amount;
 }
 
