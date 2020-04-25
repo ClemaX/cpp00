@@ -3,11 +3,12 @@ HDIR	=	.
 SDIR	=	.
 SRCS	=	$(addprefix $(SDIR)/, 411.cpp Phonebook.cpp Contact.cpp)
 CC		=	clang++
+CFLAGS	=	-Wall -Wextra -Werror
 
 all:		$(NAME)
 
 $(NAME):	$(SRCS)
-	$(CC) -I$(HDIR) $^ -o $@
+	$(CC) $(CFLAGS) -I$(HDIR) $^ -o $@
 
 re: fclean all
 
