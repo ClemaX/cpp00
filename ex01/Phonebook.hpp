@@ -15,7 +15,7 @@ class Phonebook
 {
 private:
 	std::array<Contact, MAX_CONTACTS> contacts;
-	char index = 0;
+	std::size_t index = 0;
 
 public:
 	void query(std::string input);

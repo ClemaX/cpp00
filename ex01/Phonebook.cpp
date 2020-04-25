@@ -15,11 +15,11 @@ std::ostream &operator<<(std::ostream &os, const Contact &c)
 	return (os);
 }
 
-int select_index(int range)
+std::size_t select_index(std::size_t range)
 {
 	std::string selection;
 	std::size_t input_index;
-	int selection_index = -1;
+	std::size_t selection_index = -1;
 
 	while (selection.empty() || input_index != selection.length() || selection_index < 0 || selection_index >= range)
 	{
@@ -32,14 +32,13 @@ int select_index(int range)
 			exit(0);
 		try
 		{
-			selection_index = std::stoi(selection, &input_index);
+			selection_index = std::stoul(selection, &input_index);
 		}
 		catch (...)
 		{
 			selection_index = -1;
 		}
 	}
-
 	return (selection_index);
 }
 
@@ -64,13 +63,13 @@ void Phonebook::query(std::string input)
 		std::cout << std::setw(COLUMN_WIDTH) << "LAST NAME" << SEPARATOR;
 		std::cout << std::setw(COLUMN_WIDTH) << "NICKNAME" << std::endl;
 
-		for (int i = 0; i < index; i++)
+		for (std::size_t i = 0; i < index; i++)
 		{
 			std::cout << std::setw(COLUMN_WIDTH) << std::to_string(i) << SEPARATOR;
 			std::cout << contacts[i] << std::endl;
 		}
 
-		int selection_index = select_index(index);
+		std::size_t selection_index = select_index(index);
 
 		contacts[selection_index].print_fields();
 	}
