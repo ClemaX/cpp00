@@ -1,6 +1,6 @@
 #include <Phonebook.hpp>
 
-int main(int ac, const char **av)
+int main(void)
 {
 	Phonebook phonebook = Phonebook();
 	std::string command;
