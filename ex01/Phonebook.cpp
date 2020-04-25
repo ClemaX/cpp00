@@ -25,7 +25,7 @@ std::size_t select_index(std::size_t range)
 	{
 		std::cout << "Selection [0";
 		if (range > 1)
-			std::cout << " - " << std::to_string(range - 1);
+			std::cout << " - " << range - 1;
 		std::cout << "]: ";
 
 		if (!getline(std::cin, selection))
@@ -49,7 +49,7 @@ void Phonebook::query(std::string input)
 		if (index < contacts.size())
 			contacts[index++].query_fields();
 		else
-			std::cout << "Error: Please purchase the full version of this software to save more than " << std::to_string(MAX_CONTACTS) << " contacts!" << std::endl;
+			std::cout << "Error: Please purchase the full version of this software to save more than " << MAX_CONTACTS << " contacts!" << std::endl;
 	}
 	else if (input == "SEARCH")
 	{
@@ -65,7 +65,7 @@ void Phonebook::query(std::string input)
 
 		for (std::size_t i = 0; i < index; i++)
 		{
-			std::cout << std::setw(COLUMN_WIDTH) << std::to_string(i) << SEPARATOR;
+			std::cout << std::setw(COLUMN_WIDTH) << i << SEPARATOR;
 			std::cout << contacts[i] << std::endl;
 		}
 
