@@ -17,6 +17,6 @@ int main(int ac, const char **av)
 	else
 		for (int i = 1; i < ac; i++)
 			std::cout << strupper(av[i]);
-	std::cout << "\n";
+	std::cout << std::endl;
 	return (0);
 }
