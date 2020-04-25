@@ -2,7 +2,7 @@ NAME	=	411
 HDIR	=	.
 SDIR	=	.
 SRCS	=	$(addprefix $(SDIR)/, 411.cpp Phonebook.cpp Contact.cpp)
-CC		=	g++
+CC		=	clang++
 
 all:		$(NAME)
 

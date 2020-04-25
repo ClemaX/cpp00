@@ -1,6 +1,6 @@
 NAME	=	megaphone
 SRCS	=	megaphone.cpp
-CC		=	g++
+CC		=	clang++
 
 all:		$(NAME)
 
