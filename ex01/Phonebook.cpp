@@ -42,37 +42,38 @@ std::size_t select_index(std::size_t range)
 	return (selection_index);
 }
 
-void Phonebook::query(std::string input)
+bool Phonebook::query(std::string input)
 {
 	if (input == "ADD")
 	{
 		if (index < contacts.size())
-			contacts[index++].query_fields();
+			return (contacts[index++].query_fields());
 		else
 			std::cout << "Error: Please purchase the full version of this software to save more than " << MAX_CONTACTS << " contacts!" << std::endl;
 	}
 	else if (input == "SEARCH")
 	{
 		if (index == 0)
-		{
 			std::cout << "You didn't save any contacts yet. Use the \"ADD\" command!" << std::endl;
-			return;
-		}
-		std::cout << std::setw(COLUMN_WIDTH) << "INDEX" << SEPARATOR;
-		std::cout << std::setw(COLUMN_WIDTH) << "FIRST NAME" << SEPARATOR;
-		std::cout << std::setw(COLUMN_WIDTH) << "LAST NAME" << SEPARATOR;
-		std::cout << std::setw(COLUMN_WIDTH) << "NICKNAME" << std::endl;
-
-		for (std::size_t i = 0; i < index; i++)
+		else
 		{
-			std::cout << std::setw(COLUMN_WIDTH) << i << SEPARATOR;
-			std::cout << contacts[i] << std::endl;
+			std::cout << std::setw(COLUMN_WIDTH) << "INDEX" << SEPARATOR;
+			std::cout << std::setw(COLUMN_WIDTH) << "FIRST NAME" << SEPARATOR;
+			std::cout << std::setw(COLUMN_WIDTH) << "LAST NAME" << SEPARATOR;
+			std::cout << std::setw(COLUMN_WIDTH) << "NICKNAME" << std::endl;
+
+			for (std::size_t i = 0; i < index; i++)
+			{
+				std::cout << std::setw(COLUMN_WIDTH) << i << SEPARATOR;
+				std::cout << contacts[i] << std::endl;
+			}
+
+			std::size_t selection_index = select_index(index);
+
+			contacts[selection_index].print_fields();
 		}
-
-		std::size_t selection_index = select_index(index);
-
-		contacts[selection_index].print_fields();
 	}
 	else if (input == "EXIT")
-		exit(0);
+		return (false);
+	return (true);
 }

@@ -1,37 +1,34 @@
 #ifndef CONTACT_H
 # define CONTACT_H
 
-# include <string>
-# include <iostream>
+# include <InputField.hpp>
+
+# include <Validators.hpp>
 
 class Contact
 {
 private:
-	bool is_empty = true;
-
-	void query_field(std::string &field, std::string field_name, std::string default_value);
-	void print_field(std::string &field, std::string field_name);
+	bool	is_empty = true;
 
 public:
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string login;
-	std::string postal_address;
-	std::string email_address;
-	std::string phone_number;
-	std::string birthday_date;
-	std::string favorite_meal;
-	std::string underwear_color;
-	std::string darkest_secret;
+	TextInputField	first_name = TextInputField("First name", &name_validator);
+	TextInputField	last_name = TextInputField("Last name", &name_validator);
+	TextInputField	nickname = TextInputField("Nickname", &name_validator);
+	TextInputField	login = TextInputField("Login", &name_validator);
+	TextInputField	postal_address = TextInputField("Postal address", &name_validator);
+	TextInputField	email_address = TextInputField("Email address", &email_validator);
+	TextInputField	phone_number = TextInputField("Phone number", &phone_number_validator);
+	DateInputField	birthday_date = DateInputField("Birthday date");
+	TextInputField	favorite_meal = TextInputField("Favorite meal", &name_validator);
+	TextInputField	underwear_color = TextInputField("Underwear color", &name_validator);
+	TextInputField	darkest_secret = TextInputField("Darkest secret", &name_validator);
 
-	bool empty()
+	bool	empty()
 	{
 		return (is_empty);
 	}
-
-	void query_fields();
-	void print_fields();
+	bool	query_fields();
+	void	print_fields();
 };
 
 #endif

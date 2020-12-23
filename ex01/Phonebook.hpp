@@ -14,11 +14,11 @@
 class Phonebook
 {
 private:
-	std::array<Contact, MAX_CONTACTS> contacts;
-	std::size_t index = 0;
+	std::array<Contact, MAX_CONTACTS>	contacts;
+	std::size_t							index = 0;
 
 public:
-	void query(std::string input);
+	bool	query(std::string input);
 };
 
 #endif
