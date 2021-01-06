@@ -1,12 +1,12 @@
 NAME	=	megaphone
 SRCS	=	megaphone.cpp
-CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror
+CXX		=	clang++
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic-errors
 
 all:		$(NAME)
 
 $(NAME):	$(SRCS)
-	$(CC) $(CFLAGS) $< -o $@
+	$(CXX) $(CFLAGS) $< -o $@
 
 re: fclean all
 
