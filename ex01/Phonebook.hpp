@@ -13,9 +13,12 @@
 class Phonebook
 {
 private:
-	std::array<Contact, MAX_CONTACTS>	contacts;
-	std::size_t							index = 0;
+	Contact		contacts[MAX_CONTACTS];
+	std::size_t	index;
 
 public:
 	bool	query(std::string input);
+
+	Phonebook();
+	~Phonebook();
 };

@@ -12,7 +12,7 @@ DEPS	=	$(OBJS:.o=.d)
 CXX		=	clang++
 LD		=	clang++
 
-CFLAGS	=	-Wall -Wextra -Werror -I$(IDIR)
+CFLAGS	=	-Wall -Wextra -Werror -I$(IDIR) -std=c++98 -pedantic-errors
 DFLAGS	=	-MT $@ -MMD -MP -MF $(ODIR)/$*.d
 
 COMPILE.cpp	=	$(CXX) $(DFLAGS) $(CFLAGS) -c

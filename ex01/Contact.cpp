@@ -1,5 +1,28 @@
 #include <Contact.hpp>
 
+Contact::Contact(void)
+:	is_empty(true),
+	first_name("First name", &name_validator),
+	last_name("Last name", &name_validator),
+	nickname("Nickname", &name_validator),
+	login("Login", &name_validator),
+	postal_address("Postal address", &name_validator),
+	email_address("Email address", &email_validator),
+	phone_number("Phone number", &phone_number_validator),
+	birthday_date("Birthday date"),
+	favorite_meal("Favorite meal", &name_validator),
+	underwear_color("Underwear color", &name_validator),
+	darkest_secret("Darkest secret", &name_validator)
+{
+}
+
+Contact::~Contact(void) {}
+
+bool	Contact::empty() const
+{
+	return (is_empty);
+}
+
 bool	Contact::query_fields()
 {
 	is_empty = !(
@@ -19,7 +42,8 @@ bool	Contact::query_fields()
 	return (!is_empty);
 }
 
-void	Contact::print_fields() {
+void	Contact::print_fields() const
+{
 	if (!is_empty)
 	{
 		first_name.print();

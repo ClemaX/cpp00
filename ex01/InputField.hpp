@@ -14,7 +14,7 @@ public:
 	const std::string	name;
 
 	bool query();
-	void print();
+	void print() const;
 
 	operator std::string() const;
 
@@ -29,10 +29,10 @@ private:
 	const text_validator	validator;
 
 public:
-	bool query();
-	void print();
+	bool		query();
+	void		print() const;
  
-	operator std::string() const;
+	operator	std::string() const;
 
 	TextInputField(const std::string name, const text_validator validator)
 		: InputField(name), validator(validator) {};
@@ -48,9 +48,9 @@ private:
 public:
 	bool		query();
 	const char	*validate();
-	void		print();
+	void		print() const;
 
-	operator std::string() const;
+	operator	std::string() const;
 
 	DateInputField(const std::string name)
 		: InputField(name) {};

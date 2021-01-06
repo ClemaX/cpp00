@@ -7,25 +7,25 @@
 class Contact
 {
 private:
-	bool	is_empty = true;
+	bool	is_empty;
 
 public:
-	TextInputField	first_name = TextInputField("First name", &name_validator);
-	TextInputField	last_name = TextInputField("Last name", &name_validator);
-	TextInputField	nickname = TextInputField("Nickname", &name_validator);
-	TextInputField	login = TextInputField("Login", &name_validator);
-	TextInputField	postal_address = TextInputField("Postal address", &name_validator);
-	TextInputField	email_address = TextInputField("Email address", &email_validator);
-	TextInputField	phone_number = TextInputField("Phone number", &phone_number_validator);
-	DateInputField	birthday_date = DateInputField("Birthday date");
-	TextInputField	favorite_meal = TextInputField("Favorite meal", &name_validator);
-	TextInputField	underwear_color = TextInputField("Underwear color", &name_validator);
-	TextInputField	darkest_secret = TextInputField("Darkest secret", &name_validator);
+	TextInputField	first_name;
+	TextInputField	last_name;
+	TextInputField	nickname;
+	TextInputField	login;
+	TextInputField	postal_address;
+	TextInputField	email_address;
+	TextInputField	phone_number;
+	DateInputField	birthday_date;
+	TextInputField	favorite_meal;
+	TextInputField	underwear_color;
+	TextInputField	darkest_secret;
 
-	bool	empty()
-	{
-		return (is_empty);
-	}
+	bool	empty() const;
 	bool	query_fields();
-	void	print_fields();
+	void	print_fields() const;
+
+	Contact();
+	~Contact();
 };

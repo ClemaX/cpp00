@@ -16,7 +16,8 @@ bool TextInputField::query()
 	return (true);
 }
 
-void TextInputField::print() {
+void TextInputField::print() const
+{
 	std::cout << name << ": " << value << std::endl;
 }
 
@@ -64,7 +65,7 @@ bool DateInputField::query()
 	return (false);
 }
 
-void DateInputField::print()
+void DateInputField::print() const
 {
 	std::cout << "day: " << day << '\n';
 	std::cout << "month: " << month << '\n';

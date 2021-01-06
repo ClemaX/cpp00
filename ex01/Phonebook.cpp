@@ -1,5 +1,14 @@
 #include <Phonebook.hpp>
 
+Phonebook::Phonebook()
+	: index(0)
+{
+}
+
+Phonebook::~Phonebook()
+{
+}
+
 std::string truncate(std::string field)
 {
 	if (field.length() > COLUMN_WIDTH)
@@ -46,7 +55,7 @@ bool Phonebook::query(std::string input)
 {
 	if (input == "ADD")
 	{
-		if (index < contacts.size())
+		if (index < sizeof(contacts) / sizeof(*contacts))
 			return (contacts[index++].query_fields());
 		else
 			std::cout << "Error: Please purchase the full version of this software to save more than " << MAX_CONTACTS << " contacts!" << std::endl;
