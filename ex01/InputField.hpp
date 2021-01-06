@@ -1,11 +1,10 @@
-#ifndef INPUT_FIELD_H
-# define INPUT_FIELD_H
+#pragma once
 
-# include <iostream>
-# include <string>
-# include <sstream>
-# include <locale>
-# include <ctime>
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <locale>
+#include <ctime>
 
 typedef	const char	*(*text_validator)(std::string &);
 
@@ -56,5 +55,3 @@ public:
 	DateInputField(const std::string name)
 		: InputField(name) {};
 };
-
-#endif

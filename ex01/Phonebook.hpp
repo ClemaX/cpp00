@@ -1,15 +1,14 @@
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#pragma once
 
-# define MAX_CONTACTS 8
-# define COLUMN_WIDTH 10
-# define SEPARATOR '|'
+#define MAX_CONTACTS 8
+#define COLUMN_WIDTH 10
+#define SEPARATOR '|'
 
-# include <Contact.hpp>
+#include <Contact.hpp>
 
-# include <string>
-# include <iostream>
-# include <iomanip>
+#include <string>
+#include <iostream>
+#include <iomanip>
 
 class Phonebook
 {
@@ -20,5 +19,3 @@ private:
 public:
 	bool	query(std::string input);
 };
-
-#endif

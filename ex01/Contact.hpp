@@ -1,9 +1,8 @@
-#ifndef CONTACT_H
-# define CONTACT_H
+#pragma once
 
-# include <InputField.hpp>
+#include <InputField.hpp>
 
-# include <Validators.hpp>
+#include <Validators.hpp>
 
 class Contact
 {
@@ -30,5 +29,3 @@ public:
 	bool	query_fields();
 	void	print_fields();
 };
-
-#endif
