@@ -3,10 +3,14 @@
 
 std::string strupper(const char *in)
 {
-	std::string out = in;
-
-	for (char &c : out)
-		c = toupper(c);
+	std::string				out = in;
+	std::string::iterator	it = out.begin();
+	
+	while (it != out.end())
+	{
+		*it = toupper(*it);
+		it++;
+	}
 	return (out);
 }
 
